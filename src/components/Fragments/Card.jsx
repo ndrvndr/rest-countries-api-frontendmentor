@@ -3,23 +3,21 @@ import PropTypes from "prop-types";
 
 const Card = ({ country }) => {
   return (
-    <div className="mt-4">
-      <div className="flex flex-col w-[270px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden">
-        <img src={country.flags?.svg} className="h-[175px]" />
-        <h1 className="font-extrabold mx-5">{country.name?.official}</h1>
-        <div className="flex flex-col space-y-3 mx-5">
-          <div>
-            <span className="font-semibold">Population: </span>
-            <span>{country.population}</span>
-          </div>
-          <div>
-            <span className="font-semibold">Region: </span>
-            <span>{country.region}</span>
-          </div>
-          <div>
-            <span className="font-semibold">Capital: </span>
-            <span>{country.capital}</span>
-          </div>
+    <div className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden">
+      <img src={country.flags?.svg} className="h-[175px] object-cover" />
+      <h1 className="font-extrabold mx-5">{country.name?.official}</h1>
+      <div className="flex flex-col space-y-3 mx-5">
+        <div>
+          <span className="font-semibold">Population: </span>
+          <span>{country.population}</span>
+        </div>
+        <div>
+          <span className="font-semibold">Region: </span>
+          <span>{country.region}</span>
+        </div>
+        <div>
+          <span className="font-semibold">Capital: </span>
+          <span>{country.capital}</span>
         </div>
       </div>
     </div>
@@ -41,7 +39,7 @@ const CardList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="space-y-5 relative overflow-auto top-[300px] -z-10">
       {countries.map((country) => (
         <Card key={country.cca2} country={country} />
       ))}

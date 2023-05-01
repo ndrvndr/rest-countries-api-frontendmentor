@@ -138,3 +138,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   background-color: hsl(0, 0%, 98%);
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}

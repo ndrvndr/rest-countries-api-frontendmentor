@@ -4,7 +4,7 @@ const SelectBox = ({ handleToggle, selectedRegion }) => {
   return (
     <div
       onClick={handleToggle}
-      className="w-[60%] h-16 rounded-lg drop-shadow-sm self-start ml-[18px] bg-white flex justify-between items-center px-4 mb-2 cursor-pointer"
+      className="w-[60%] h-16 rounded-lg drop-shadow-sm self-start ml-[18px] bg-white flex justify-between items-center px-4 mb-2 cursor-pointer fixed top-[210px]"
     >
       <span className="h-fit font-semibold text-sm">
         {selectedRegion ? selectedRegion : "Filter by Region"}
