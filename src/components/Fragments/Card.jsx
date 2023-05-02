@@ -24,11 +24,9 @@ const Card = ({ country }) => {
   );
 };
 
-const CardList = ({ selectedRegion }) => {
+const CardList = ({ selectedRegion, searchRegion }) => {
   const [countries, setCountries] = React.useState([]);
-  const cardRef = React.useRef(null);
 
-  const searchKeyword = "Kingdom of Lesotho";
   const [filterRegion, setFilterRegion] = React.useState("");
 
   React.useEffect(() => {
@@ -42,11 +40,7 @@ const CardList = ({ selectedRegion }) => {
       });
 
     setFilterRegion(selectedRegion);
-
-    if (cardRef.current) {
-      cardRef.current.scrollIntoView();
-    }
-  }, [searchKeyword, selectedRegion]);
+  }, [selectedRegion, searchRegion]);
 
   return (
     <>
@@ -56,12 +50,15 @@ const CardList = ({ selectedRegion }) => {
           .filter((country) =>
             filterRegion ? country.region === filterRegion : true
           )
+          .filter((country) =>
+            searchRegion
+              ? country.name?.official
+                  .toLowerCase()
+                  .includes(searchRegion.toLowerCase())
+              : true
+          )
           .map((country) => (
-            <Card
-              key={country.cca2}
-              country={country}
-              ref={country.name?.official === searchKeyword ? cardRef : null}
-            />
+            <Card key={country.cca2} country={country} />
           ))}
       </div>
     </>
@@ -84,6 +81,7 @@ Card.propTypes = {
 
 CardList.propTypes = {
   selectedRegion: PropTypes.string.isRequired,
+  searchRegion: PropTypes.string.isRequired,
 };
 
 export default CardList;

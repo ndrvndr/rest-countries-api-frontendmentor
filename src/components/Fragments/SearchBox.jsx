@@ -1,10 +1,12 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 import SearchOutline from "../../assets/search-outline.svg";
 
-const SearchBox = () => {
-  const [searchKeyword, setSearchKeyword] = React.useState("");
+const SearchBox = (props) => {
+  const [searchRegion, setSearchRegion] = React.useState("");
   const handleInputChange = (event) => {
-    setSearchKeyword(event.target.value);
+    setSearchRegion(event.target.value);
+    props.onSearchRegion(event.target.value);
   };
 
   return (
@@ -14,11 +16,15 @@ const SearchBox = () => {
         type="text"
         className="outline-none border-none bg-transparent text-sm"
         placeholder="Search for a country..."
-        value={searchKeyword}
+        value={searchRegion}
         onChange={handleInputChange}
       ></input>
     </div>
   );
+};
+
+SearchBox.propTypes = {
+  onSearchRegion: PropTypes.func.isRequired,
 };
 
 export default SearchBox;

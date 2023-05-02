@@ -7,17 +7,22 @@ import SearchBox from "./components/Fragments/SearchBox";
 
 function App() {
   const [selectedRegion, setSelectedRegion] = React.useState("");
+  const [searchRegion, setSearchRegion] = React.useState("");
 
   const handleSelectRegion = (region) => {
     setSelectedRegion(region);
   };
 
+  const handleSearchRegion = (region) => {
+    setSearchRegion(region);
+  };
+
   return (
     <main className="flex flex-col justify-center items-center">
       <Navbar />
-      <SearchBox />
+      <SearchBox onSearchRegion={handleSearchRegion} />
       <Filter onSelectRegion={handleSelectRegion} />
-      <Card selectedRegion={selectedRegion} />
+      <Card selectedRegion={selectedRegion} searchRegion={searchRegion} />
     </main>
   );
 }
