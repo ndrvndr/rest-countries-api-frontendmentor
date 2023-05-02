@@ -1,8 +1,10 @@
 import * as React from "react";
+import PropTypes from "prop-types";
+
 import SelectBox from "../Elements/Filter/SelectBox";
 import CountryList from "../Elements/Filter/CountryList";
 
-const Filter = () => {
+const Filter = (props) => {
   const [isActive, setIsActive] = React.useState(false);
   const [selectedRegion, setSelectedRegion] = React.useState("");
 
@@ -13,6 +15,7 @@ const Filter = () => {
   const handleSelectRegion = (region) => {
     setSelectedRegion(region);
     setIsActive(false);
+    props.onSelectRegion(region);
   };
 
   return (
@@ -25,4 +28,9 @@ const Filter = () => {
     </>
   );
 };
+
+Filter.propTypes = {
+  onSelectRegion: PropTypes.func.isRequired,
+};
+
 export default Filter;

@@ -24,8 +24,12 @@ const Card = ({ country }) => {
   );
 };
 
-const CardList = () => {
+const CardList = ({ selectedRegion }) => {
   const [countries, setCountries] = React.useState([]);
+  const cardRef = React.useRef(null);
+
+  const searchKeyword = "Kingdom of Lesotho";
+  const [filterRegion, setFilterRegion] = React.useState("");
 
   React.useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -36,14 +40,31 @@ const CardList = () => {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+
+    setFilterRegion(selectedRegion);
+
+    if (cardRef.current) {
+      cardRef.current.scrollIntoView();
+    }
+  }, [searchKeyword, selectedRegion]);
 
   return (
-    <div className="space-y-5 relative overflow-auto top-[300px] -z-10">
-      {countries.map((country) => (
-        <Card key={country.cca2} country={country} />
-      ))}
-    </div>
+    <>
+      <div className="h-[299px] w-[250px] bg-[#fafafa] fixed top-0 -z-10"></div>
+      <div className="space-y-[25px] relative overflow-auto top-[299px] -z-20">
+        {countries
+          .filter((country) =>
+            filterRegion ? country.region === filterRegion : true
+          )
+          .map((country) => (
+            <Card
+              key={country.cca2}
+              country={country}
+              ref={country.name?.official === searchKeyword ? cardRef : null}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 
@@ -59,6 +80,10 @@ Card.propTypes = {
     region: PropTypes.string,
     capital: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   }).isRequired,
+};
+
+CardList.propTypes = {
+  selectedRegion: PropTypes.string.isRequired,
 };
 
 export default CardList;
