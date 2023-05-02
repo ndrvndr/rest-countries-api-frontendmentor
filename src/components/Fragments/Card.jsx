@@ -45,7 +45,7 @@ const CardList = ({ selectedRegion, searchRegion }) => {
   return (
     <>
       <div className="h-[299px] w-[250px] bg-[#fafafa] fixed top-0 -z-10"></div>
-      <div className="space-y-[25px] relative overflow-auto top-[299px] -z-20">
+      <div className="space-y-[25px] relative overflow-auto top-[299px] -z-20 pb-[25px]">
         {countries
           .filter((country) =>
             filterRegion ? country.region === filterRegion : true
