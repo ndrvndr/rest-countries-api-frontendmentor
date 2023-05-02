@@ -14,7 +14,7 @@ const CountryList = ({ isActive, handleSelectRegion }) => {
       </li>
       <li
         className="cursor-pointer"
-        onClick={() => handleSelectRegion("America")}
+        onClick={() => handleSelectRegion("Americas")}
       >
         America
       </li>
