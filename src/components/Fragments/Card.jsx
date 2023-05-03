@@ -33,7 +33,9 @@ const Card = ({ selectedRegion, searchRegion }) => {
           )
           .map((country) => (
             <Link
-              to="/countryDetail"
+              to={{
+                pathname: `/countryDetails/${country.cca2}`,
+              }}
               key={country.cca2}
               className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden cursor-pointer"
             >
@@ -41,7 +43,7 @@ const Card = ({ selectedRegion, searchRegion }) => {
                 src={country.flags?.svg}
                 className="h-[175px] object-cover cursor-pointer"
               />
-              <h1 className="font-extrabold mx-5">{country.name?.official}</h1>
+              <h1 className="font-extrabold mx-5">{country.name?.common}</h1>
               <div className="flex flex-col space-y-3 mx-5">
                 <div>
                   <span className="font-semibold">Population: </span>

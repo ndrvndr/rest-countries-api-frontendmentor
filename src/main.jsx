@@ -8,7 +8,7 @@ import CountryDetails from "./pages/countryDetails.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <HomePage />, errorElement: <ErrorPage /> },
-  { path: "/countryDetail", element: <CountryDetails /> },
+  { path: "/countryDetails/:id", element: <CountryDetails /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
