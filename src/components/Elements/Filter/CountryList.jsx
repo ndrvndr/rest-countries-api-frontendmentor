@@ -4,7 +4,7 @@ const CountryList = ({ isActive, handleSelectRegion }) => {
     <ul
       className={`w-[60%] h-fit rounded-lg drop-shadow-sm self-start ml-[18px] bg-white ${
         isActive ? "flex" : "hidden"
-      } flex-col p-4 space-y-4 font-semibold text-sm fixed top-[280px]`}
+      } flex-col p-4 space-y-4 font-semibold text-sm fixed top-[280px] z-20`}
     >
       <li
         className="cursor-pointer"
