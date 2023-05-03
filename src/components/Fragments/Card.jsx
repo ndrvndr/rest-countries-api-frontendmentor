@@ -33,7 +33,7 @@ const Card = ({ selectedRegion, searchRegion }) => {
           )
           .map((country) => (
             <Link
-              to="/detailCountry"
+              to="/countryDetail"
               key={country.cca2}
               className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden cursor-pointer"
             >
