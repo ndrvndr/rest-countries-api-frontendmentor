@@ -16,7 +16,7 @@ const SelectBox = ({ handleToggle, selectedRegion }) => {
 
 SelectBox.propTypes = {
   handleToggle: PropTypes.func.isRequired,
-  selectedRegion: PropTypes.string,
+  selectedRegion: PropTypes.string.isRequired,
 };
 
 export default SelectBox;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 const Card = ({ selectedRegion, searchRegion }) => {
   const [countries, setCountries] = React.useState([]);
+
   React.useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -31,7 +32,10 @@ const Card = ({ selectedRegion, searchRegion }) => {
           )
           .map((country) => (
             <>
-              <div className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden">
+              <div
+                key={country.cca2}
+                className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden"
+              >
                 <img
                   src={country.flags?.svg}
                   className="h-[175px] object-cover"
