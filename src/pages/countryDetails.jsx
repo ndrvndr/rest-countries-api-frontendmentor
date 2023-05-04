@@ -22,6 +22,7 @@ const CountryDetails = () => {
   return (
     <AuthLayouts>
       <Button />
+      <div className="fixed bg-[#fafafa] w-full h-[200px] top-0 z-10"></div>
       <div className="relative top-[200px] px-[18px] pb-8 w-full">
         <img src={country.flags?.svg} className="w-full h-fit" />
         <h1 className="font-extrabold my-8"></h1>
