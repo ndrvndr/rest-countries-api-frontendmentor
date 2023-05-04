@@ -6,7 +6,6 @@ import AuthLayouts from "../components/Layouts/AuthLayouts";
 const CountryDetails = () => {
   const { id } = useParams();
   const [country, setCountry] = React.useState([]);
-  console.log(country);
 
   React.useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -30,11 +29,23 @@ const CountryDetails = () => {
           <div className="space-y-3">
             <div>
               <span className="font-semibold">Native Name: </span>
-              <span>{country.name?.common}</span>
+              <span>
+                {country && country.name && country.name.nativeName
+                  ? country.name.nativeName[
+                      Object.keys(country.name.nativeName)[
+                        Object.keys(country.name.nativeName).length - 1
+                      ]
+                    ].common
+                  : "Not available"}
+              </span>
             </div>
             <div>
               <span className="font-semibold">Population: </span>
-              <span>{country.population}</span>
+              <span>
+                {country.population
+                  ? country.population.toLocaleString()
+                  : "Not available"}
+              </span>
             </div>
             <div>
               <span className="font-semibold">Region: </span>
@@ -57,11 +68,40 @@ const CountryDetails = () => {
             </div>
             <div>
               <span className="font-semibold">Currencies: </span>
-              {/* <span>{Object.values(country.languages).join(", ")}</span> */}
+              <span>
+                {country.currencies
+                  ? Object.values(country.currencies)[0].name
+                  : ""}
+              </span>
             </div>
             <div>
               <span className="font-semibold">Languages: </span>
-              <span></span>
+              <span>
+                {country.languages
+                  ? Object.values(country.languages).reverse().join(", ")
+                  : ""}
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <span className="font-semibold text-lg">Border Countries:</span>
+            <div className="mt-3 flex flex-wrap justify-between">
+              {/* <div className="bg-white w-full drop-shadow-2xl">
+                <span>{country.borders}</span>
+              </div> */}
+              {country && country.borders ? (
+                country.borders.map((border, index) => (
+                  <div
+                    key={index}
+                    className="bg-white w-[101px] drop-shadow-2xl py-3 mb-3 flex justify-center"
+                  >
+                    <span>{border}</span>
+                  </div>
+                ))
+              ) : (
+                <div>No border countries found</div>
+              )}
             </div>
           </div>
         </div>
