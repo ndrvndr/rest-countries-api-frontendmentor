@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const AuthLayouts = (props) => {
   const { children } = props;
   return (
-    <main className="flex flex-col justify-center items-center">
-      <nav className="flex justify-center items-center w-screen h-20 bg-white drop-shadow-sm mb-7 px-[18px] right-0 left-0 fixed top-0 z-20">
+    <main className="flex flex-col justify-center items-center sm:px-5">
+      <nav className="flex justify-center items-center w-screen h-20 bg-white drop-shadow-sm mb-7 px-[18px] right-0 left-0 fixed top-0 z-20 sm:px-10">
         <div className="flex w-screen justify-between">
           <Link to="/">
             <h1 className="font-extrabold h-fit self-end cursor-pointer">

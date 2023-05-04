@@ -18,8 +18,8 @@ const Card = ({ selectedRegion, searchRegion }) => {
 
   return (
     <>
-      <div className="h-[299px] w-[250px] bg-[#fafafa] fixed top-0 z-10"></div>
-      <div className="space-y-[25px] relative overflow-auto top-[299px] pb -[25px] cursor-pointer">
+      <div className="h-[299px] w-[250px] bg-[#fafafa] fixed top-0 z-10 sm:w-full sm:h-[200px]"></div>
+      <div className="gap-y-[25px] relative overflow-auto top-[299px] pb -[25px] cursor-pointer sm:flex sm:flex-wrap sm:justify-between sm:w-full sm:gap-y-[3rem] sm:top-[200px]">
         {countries
           .filter((country) =>
             selectedRegion ? country.region === selectedRegion : true
@@ -37,7 +37,7 @@ const Card = ({ selectedRegion, searchRegion }) => {
                 pathname: `/countryDetails/${country.cca2}`,
               }}
               key={country.cca2}
-              className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden cursor-pointer"
+              className="flex flex-col w-[250px] h-[350px] bg-white rounded-lg justify-between pb-5 overflow-hidden cursor-pointer sm:mx-5"
             >
               <img
                 src={country.flags?.svg}

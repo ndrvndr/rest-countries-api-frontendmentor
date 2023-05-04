@@ -10,11 +10,11 @@ const SearchBox = (props) => {
   };
 
   return (
-    <div className="flex w-[90%] h-16 rounded-lg drop-shadow-sm bg-white pl-7 mb-10 fixed top-[105px] z-20">
+    <div className="flex w-[90%] h-16 rounded-lg drop-shadow-sm bg-white pl-7 mb-10 fixed top-[105px] z-20 sm:w-[30%] sm:self-start sm:ml-5">
       <img src={SearchOutline} className="w-5 mr-7 cursor-pointer"></img>
       <input
         type="text"
-        className="outline-none border-none bg-transparent text-sm"
+        className="outline-none border-none bg-transparent text-sm w-full"
         placeholder="Search for a country..."
         value={searchRegion}
         onChange={handleInputChange}
