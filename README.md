@@ -11,8 +11,6 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [Built with](#built-with)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -28,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://rest-countries-api-frontendmentor.vercel.app/)
+- Solution URL: [Solution URL here](https://your-solution-url.com)
+- Live Site URL: [Live site URL here](https://rest-countries-api-frontendmentor.vercel.app/)
 
 ## My process
 
@@ -40,7 +38,6 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Tailwind](https://tailwindcss.com/) - CSS framework
-- [Styled Components](https://styled-components.com/) - For styles
 
 ## Author
 
