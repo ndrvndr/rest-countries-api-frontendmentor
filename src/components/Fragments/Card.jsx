@@ -42,6 +42,7 @@ const Card = ({ selectedRegion, searchRegion }) => {
               <img
                 src={country.flags?.svg}
                 className="h-[175px] object-cover cursor-pointer"
+                alt="Country Flag Image"
               />
               <h1 className="font-extrabold mx-5">{country.name?.common}</h1>
               <div className="flex flex-col space-y-3 mx-5">

@@ -25,7 +25,11 @@ const CountryDetails = () => {
       <div className="fixed bg-[#fafafa] w-full h-[200px] top-0 z-10"></div>
       <div className="relative top-[200px] px-[18px] pb-8 w-full lg:flex lg:justify-around lg:items-center lg:space-x-20">
         <div className="lg:max-w-[40%]">
-          <img src={country.flags?.svg} className="w-full h-fit" />
+          <img
+            src={country.flags?.svg}
+            alt="Country Flag Image"
+            className="w-full h-fit"
+          />
         </div>
 
         <div className="lg:w-fit">
