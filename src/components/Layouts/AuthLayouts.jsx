@@ -14,7 +14,7 @@ const AuthLayouts = (props) => {
             </h1>
           </Link>
           <div className="flex h-fit items-center cursor-pointer">
-            <img src={MoonOutline} className="w-5 mr-3" />
+            <img src={MoonOutline} alt="Dark Mode Icon" className="w-5 mr-3" />
             <span className="font-semibold self-end text-sm">Dark Mode</span>
           </div>
         </div>

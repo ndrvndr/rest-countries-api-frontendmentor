@@ -9,7 +9,7 @@ const SelectBox = ({ handleToggle, selectedRegion }) => {
       <span className="h-fit font-semibold text-sm">
         {selectedRegion ? selectedRegion : "Filter by Region"}
       </span>
-      <img src={DropDownIcon} className="h-fit w-5" />
+      <img src={DropDownIcon} alt="Drop Down Icon" className="h-fit w-5" />
     </div>
   );
 };
